@@ -1,0 +1,41 @@
+.progressbar {
+  margin-top: 15px;
+  height: 80vh;
+  width: 6vw;
+}
+.circle {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid white;
+  position: relative;
+}
+.line {
+  border-left: 2px solid white;
+  height: 19vh;
+}
+@media screen and (max-width: 400px) {
+  .circle {
+    height: 10px;
+    width: 10px;
+  }
+  .line {
+    height: 18vh;
+  }
+  .progressbar {
+    height: 76vh;
+  }
+}
+@media screen and (max-width: 900px) {
+  .circle {
+    height: 14px;
+    width: 14px;
+  }
+  .line {
+    height: 20vh;
+  }
+  .progressbar {
+    height: 83vh;
+  }
+}

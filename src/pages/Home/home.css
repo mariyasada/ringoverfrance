@@ -1,0 +1,39 @@
+.hero-image-container > img {
+  margin-top: 6rem;
+  height: 35rem;
+  width: 80vw;
+  object-fit: contain;
+  position: relative;
+}
+button {
+  position: absolute;
+  top: 40%;
+  left: 65%;
+  background-color: transparent;
+  border-radius: 4px;
+  font-size: 1.3rem;
+  padding: 5px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  button {
+    position: absolute;
+    top: 40%;
+    left: 65%;
+    font-size: 1rem;
+    padding: 2px;
+  }
+}
+@media screen and (max-width: 400px) {
+  button {
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    font-size: 1rem;
+    padding: 2px;
+  }
+  .hero-image-container > img {
+    object-fit: cover;
+  }
+}

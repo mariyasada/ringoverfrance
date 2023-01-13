@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
+}
+
+:root {
+  --primary-color: #7b19f7;
+  --primary-color-light: #b481f8;
+  --modal-background: #b43bec;
+  --blue-saphhire: #0b4f6c;
+  --purple-color: #7b89e6;
+  --primary-medium-color: #603d8f;
+  --primary-dark-color: #460b94;
+  --primary-light: #8c73af;
+  --primary-extra-light: rgb(158, 115, 211);
+  --olive-color: #949100;
+  --secondary-color: #b4b23b;
+  --secondary-light-color: #d8d337;
+  --light-olive: #e0dc22;
+  --gray-color: rgb(211, 209, 209);
+  --primary-black: #141414;
+  --background-purple: #f3e8ff;
+  --light-stone: rgb(218, 211, 211);
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.flex-column {
+  flex-direction: column;
+}
+.gap-sm {
+  gap: 1rem;
+}
+.mt-sm {
+  margin: 10px 0 20px 0;
+}

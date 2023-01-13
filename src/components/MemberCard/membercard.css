@@ -1,0 +1,23 @@
+.member-card-container {
+  width: 12rem;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.image-container > img {
+  width: 12rem;
+  height: 15rem;
+  object-fit: cover;
+}
+.member-name {
+  font-size: 1.3rem;
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+.member-role {
+  font-size: 0.9rem;
+}
+.social-media-icon-container > img {
+  height: 1.5rem;
+  width: 1.5rem;
+  object-fit: contain;
+}

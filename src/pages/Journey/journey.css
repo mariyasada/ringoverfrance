@@ -1,0 +1,94 @@
+.section-image > img {
+  margin-top: 6rem;
+  object-fit: contain;
+  height: 30rem;
+  width: 80vw;
+  position: relative;
+}
+.title-journey {
+  color: white;
+  position: absolute;
+  top: 44%;
+  left: 40%;
+  font-size: 3rem;
+}
+.journey-story-container {
+  background-color: rgb(31, 28, 28);
+  width: 75.8vw;
+  margin-top: -10px;
+}
+.details-container {
+  background-color: rgb(31, 28, 28);
+  width: 70.3vw;
+  align-items: flex-start;
+  color: white;
+}
+.detail {
+  text-align: left;
+  margin-left: 10px;
+}
+.extra-div {
+  position: absolute;
+  background: linear-gradient(170deg, rgb(31, 28, 28), #4e6222);
+  height: 7rem;
+  width: 75.8vw;
+  top: 74.4%;
+  opacity: 0.5;
+  filter: blur(9px);
+}
+@media screen and (max-width: 900px) {
+  .section-image > img {
+    margin-top: -2rem;
+    height: 50rem;
+  }
+  .title-journey {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    font-size: 1.8rem;
+  }
+  .extra-div {
+    position: absolute;
+    top: 68.9%;
+    height: 5.6rem;
+  }
+  .journey-story-container {
+    margin-top: -15.8rem;
+    width: 80vw;
+  }
+  .journey-title {
+    font-size: 1rem;
+  }
+  .description {
+    font-size: 0.78rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .section-image > img {
+    margin-top: -14rem;
+    height: 50rem;
+  }
+  .title-journey {
+    color: white;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    font-size: 1rem;
+  }
+  .extra-div {
+    position: absolute;
+    top: 27%;
+    height: 2.6rem;
+  }
+  .journey-story-container {
+    margin-top: -21.3rem;
+    width: 80vw;
+  }
+  .journey-title {
+    font-size: 0.9rem;
+  }
+  .description {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,48 @@
+.grid-container {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(5, 15rem);
+  grid-template-rows: auto;
+  margin-top: 2.2rem;
+  place-items: center;
+}
+.team-page-container {
+  margin-top: 6rem;
+}
+.team-page-container > h2 {
+  font-weight: 100;
+}
+@media screen and (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 15rem);
+    gap: 1rem;
+    grid-template-rows: auto;
+    margin-top: 2rem;
+    place-items: center;
+  }
+  .team-page-container {
+    margin-top: 5rem;
+  }
+  .team-page-container > h2 {
+    font-size: 1.2rem;
+    width: 90vw;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 400px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 15rem);
+    gap: 1rem;
+    grid-template-rows: auto;
+    margin-top: 2rem;
+    place-items: center;
+  }
+  .team-page-container {
+    margin-top: 4.5rem;
+  }
+  .team-page-container > h2 {
+    font-size: 1rem;
+    width: 80vw;
+    margin: 0 auto;
+  }
+}
