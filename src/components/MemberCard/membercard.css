@@ -1,6 +1,6 @@
 .member-card-container {
   width: 12rem;
-  height: auto;
+  height: 25rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .image-container > img {
@@ -15,9 +15,46 @@
 }
 .member-role {
   font-size: 0.9rem;
+  text-align: left;
+  width: 100%;
 }
 .social-media-icon-container > img {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.3rem;
+  width: 1.3rem;
   object-fit: contain;
+}
+.card-details {
+  width: 10rem;
+  align-items: flex-start;
+  padding: 10px;
+}
+@media screen and (max-width: 900px) {
+  .member-card-container {
+    height: 25rem;
+  }
+  .image-container > img {
+    width: 12rem;
+    height: 15rem;
+    object-fit: cover;
+  }
+  .social-media-icon-container > img {
+    height: 1rem;
+    width: 1rem;
+    object-fit: contain;
+  }
+}
+@media screen and (max-width: 400px) {
+  .member-card-container {
+    height: 25rem;
+  }
+  .image-container > img {
+    width: 12rem;
+    height: 15rem;
+    object-fit: cover;
+  }
+  .social-media-icon-container > img {
+    height: 1rem;
+    width: 1rem;
+    object-fit: contain;
+  }
 }

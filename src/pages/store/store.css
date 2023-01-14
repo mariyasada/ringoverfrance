@@ -84,6 +84,12 @@ h2 {
     gap: 0.7rem;
     flex-direction: column;
   }
+  .shoes-with-search {
+    width: 80vw;
+    height: 3rem;
+    justify-content: space-between;
+  }
+
   .filterbar-container {
     width: 90vw;
     height: 16vh;
@@ -171,5 +177,13 @@ h2 {
     width: 90vw;
     position: absolute;
     margin: auto;
+  }
+  .shoes-with-search {
+    width: 80vw;
+    height: 3rem;
+    justify-content: space-between;
+  }
+  .shoes-with-search > h2 {
+    font-size: 1rem;
   }
 }
