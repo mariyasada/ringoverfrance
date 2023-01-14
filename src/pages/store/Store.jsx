@@ -6,7 +6,7 @@ import { BsSearch } from "../../components/Icons";
 import { useProducts } from "../../context/Productcontext";
 
 export const Store = () => {
-  const { filteredData, state } = useProducts();
+  const { filteredData } = useProducts();
   return (
     <div className="product-store-container flex-center">
       <div className="filterbar-container">

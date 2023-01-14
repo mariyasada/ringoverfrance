@@ -4,7 +4,7 @@ import { useProducts } from "../../context/Productcontext";
 import "../Filterbar/filterbar.css";
 
 export const FilterBar = () => {
-  const { state, dispatch } = useProducts();
+  const { dispatch } = useProducts();
 
   const ClickHandler = (e) => {
     let alreadyChecked = e.target.checked;

@@ -12,7 +12,7 @@ import {
 import { customizedData } from "../../components/constants";
 
 export const ProductDetailPage = () => {
-  const { filteredData, state, dispatch } = useProducts();
+  const { filteredData, dispatch } = useProducts();
   const { productId } = useParams();
 
   const getProductDetails = (filteredData, productId) => {

@@ -6,7 +6,7 @@ import "../ProductCard/productcard.css";
 
 export const ProductCard = ({ product }) => {
   const { productName, price, rating, image } = product;
-  const { state, dispatch, cartList } = useProducts();
+  const { dispatch } = useProducts();
   return (
     <div className="card-container flex-center flex-column">
       <Link to={`/product/${product.id}`}>

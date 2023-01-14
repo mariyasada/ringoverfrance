@@ -3,7 +3,7 @@ import "../Navbar/navbar.css";
 import { FiMenu, GiCancel, FaUserAlt } from "../Icons";
 import { Hamburger } from "../index";
 import "../Hamburger/Hamburger.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   const [open, setOpen] = useState(false);

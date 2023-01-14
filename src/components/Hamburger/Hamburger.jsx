@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../Hamburger/Hamburger.css";
 import { sidebarOption } from "../constants";
 
@@ -22,25 +22,6 @@ export const Hamburger = () => {
             </NavLink>
           );
         })}
-        {/* <NavLink to="/" style={getActiveStyle} className="hamburger-menu-item">
-          HOME
-        </NavLink>
-
-        <NavLink to="/" style={getActiveStyle} className="hamburger-menu-item">
-          THE JOURNEY
-        </NavLink>
-
-        <NavLink to="/" style={getActiveStyle} className="hamburger-menu-item">
-          TEAM
-        </NavLink>
-
-        <NavLink to="/" style={getActiveStyle} className="hamburger-menu-item">
-          STORE
-        </NavLink>
-
-        <NavLink to="/" style={getActiveStyle} className="hamburger-menu-item">
-          CONTACT
-        </NavLink> */}
       </ul>
     </div>
   );

@@ -9,7 +9,7 @@ import { useProducts } from "../../context/Productcontext";
 import { CartCard } from "../CartProduct/CartCard";
 
 export const Cart = () => {
-  const { filteredData, state } = useProducts();
+  const { state } = useProducts();
   const { cartList } = state;
   return (
     <div className="cart-data-container">
