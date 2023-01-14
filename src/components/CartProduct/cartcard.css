@@ -1,0 +1,64 @@
+.cart-card-container {
+  width: 17vw;
+  position: relative;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.img-container > img {
+  height: 6.5rem;
+  width: 6.5rem;
+  object-fit: contain;
+}
+.name-and-title {
+  font-size: 0.8rem;
+  align-items: flex-start;
+}
+.name-and-title > h4 {
+  width: 10vw;
+  text-align: left;
+}
+.name-and-title > span {
+  font-size: 12px;
+  margin-top: -1rem;
+}
+.card-details {
+  height: 6.5rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.cancel-button {
+  position: absolute;
+  color: red;
+  font-size: 1.3rem;
+  top: -1rem;
+  left: -10px;
+}
+@media screen and (max-width: 900px) {
+  .cart-card-container {
+    width: 70vw;
+    position: relative;
+    gap: 12px;
+    margin: 0 auto;
+  }
+  .img-container > img {
+    height: 5.5rem;
+    width: 5.5rem;
+    object-fit: contain;
+  }
+  .name-and-title > h4 {
+    width: 30vw;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cart-card-container {
+    width: 70vw;
+    position: relative;
+    gap: 10px;
+  }
+  .name-and-title > h4 {
+    width: 50vw;
+    text-align: left;
+  }
+}

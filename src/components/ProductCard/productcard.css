@@ -1,0 +1,33 @@
+.product-image-container > img {
+  height: 10rem;
+  width: 12rem;
+  object-fit: contain;
+}
+.card-details-container {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.price-and-rating {
+  margin-top: -10px;
+  gap: 26px;
+  align-items: center;
+}
+.color-rating {
+  align-self: center;
+  margin-top: 4px;
+  color: rgb(212, 212, 37);
+}
+@media screen and (max-width: 900px) {
+  .product-image-container > img {
+    height: 9rem;
+    width: 9rem;
+    object-fit: contain;
+  }
+}
+@media screen and (max-width: 400px) {
+  .product-image-container > img {
+    height: 10rem;
+    width: 10rem;
+    object-fit: contain;
+  }
+}

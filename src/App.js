@@ -1,22 +1,23 @@
 import './App.css';
 import {Routes,Route} from "react-router";
 import { NavBar } from './components/index';
-import {Home,ContactPage,Team} from "./pages/index";
-import { ProgressBar } from './components/VerticleProgressBar/ProgressBar';
-import { Journey } from './pages/Journey/Journey';
+import {Home,ContactPage,Team,Journey, Store,ProductDetailPage} from "./pages/index";
+
 
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      {/* <Routes>
+      <Routes>
+         <Route path="/" element={<Store/>}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/contact" element={<ContactPage/>}/>
         <Route path="/team" element={<Team/>}/>
-      </Routes> */}
-      {/* <ProgressBar/> */}
-      <Journey/>
+        <Route path="/journey" element={<Journey/>}/>       
+        <Route path="/product/:productId" element={<ProductDetailPage/>}/>
+      </Routes>
+      
       
       
     </div>

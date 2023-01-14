@@ -5,7 +5,7 @@
   object-fit: contain;
   position: relative;
 }
-button {
+.explore {
   position: absolute;
   top: 40%;
   left: 65%;
@@ -17,7 +17,7 @@ button {
   cursor: pointer;
 }
 @media screen and (max-width: 900px) {
-  button {
+  .explore {
     position: absolute;
     top: 40%;
     left: 65%;
@@ -26,7 +26,7 @@ button {
   }
 }
 @media screen and (max-width: 400px) {
-  button {
+  .explore {
     position: absolute;
     top: 20%;
     left: 45%;

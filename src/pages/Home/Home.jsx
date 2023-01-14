@@ -10,7 +10,7 @@ export const Home = () => {
         src="https://ik.imagekit.io/qrhnvir8bf0/pexels-web-donut-19090_2SpBTD7Dz.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1673609312966"
       />
       <Link to="/store">
-        <button> Let's Explore</button>
+        <button className="explore"> Let's Explore</button>
       </Link>
     </div>
   );

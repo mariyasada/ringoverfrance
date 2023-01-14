@@ -2,7 +2,7 @@ export const sidebarOption = [
   { path: "/home", name: "HOME" },
   { path: "/journey", name: "THE JOURNEY" },
   { path: "/team", name: "TEAM" },
-  { path: "/store", name: "STORE" },
+  { path: "/", name: "STORE" },
   { path: "/contact", name: "CONTACT" },
 ];
 export const teamMemberData=[
@@ -76,3 +76,28 @@ export const journeyDetails=[
   description:"Here we are, made a perfect platform for you to involve in the making of a shoe you want to buy! We have evolved ever since we started out. We wish to help you more and make KICKSUP a bigger team. Design your shoe and be a part of our journey!"
 },
 ];
+
+export const customizedData=[{
+  name:"Front",
+  isRed:true,
+  isBlack:false,
+  isBlue:false
+},
+{
+  name:"Middle",
+  isRed:true,
+  isBlack:false,
+  isBlue:true
+},
+{
+  name:"Back",
+  isRed:true,
+  isBlack:false,
+  isBlue:false
+},
+{
+  name:"Sole",
+  isRed:true,
+  isBlack:false,
+  isBlue:false
+}]

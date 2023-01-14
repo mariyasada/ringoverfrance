@@ -45,7 +45,7 @@ export const NavBar = () => {
               TEAM
             </NavLink>
 
-            <NavLink to="/store" style={getActiveLink} className="nav-item">
+            <NavLink to="/" style={getActiveLink} className="nav-item">
               STORE
             </NavLink>
 
