@@ -77,6 +77,12 @@ h2 {
   background-color: var(--light-stone);
   border: 1px solid black;
 }
+.error-msg {
+  text-align: center;
+  place-self: center;
+  font-size: 12px;
+  color: red;
+}
 @media screen and (max-width: 900px) {
   .product-store-container {
     width: 98vw;
@@ -130,6 +136,10 @@ h2 {
     width: 90vw;
     position: absolute;
     margin: auto;
+  }
+  .error-msg {
+    font-size: 12px;
+    color: red;
   }
 }
 @media screen and (max-width: 400px) {

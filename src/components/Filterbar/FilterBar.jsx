@@ -72,14 +72,14 @@ export const FilterBar = () => {
       <div className="design-container flex-center flex-column">
         <span className="design-data f-bold">Design Template</span>
 
-        {[2, 3, 4].map((size, index) => {
+        {[2, 3, 3].map((size, index) => {
           return (
-            <li key={size}>
+            <li key={index === 2 ? size.toString() : size}>
               <label htmlFor={`${size}`}>
                 <input
                   type="checkbox"
                   id={size}
-                  value={size}
+                  value={index === 2 ? 4 : size}
                   name="design"
                   onChange={(e) => dispatch(templateClickHandler(e))}
                 />
