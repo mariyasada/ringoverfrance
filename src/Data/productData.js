@@ -3,7 +3,7 @@ export const products=[
     {
         id:uuidv4(),
         productName:"Ferrari Neo Cat Sneakers",
-        price:3999,
+        price:5999,
         rating:3,
         image:"https://rukminim1.flixcart.com/image/612/612/xif0q/shoe/p/g/a/-original-imagjhbr8tm9nwz2.jpeg?q=70",
         image1:"https://rukminim1.flixcart.com/image/832/832/xif0q/shoe/s/y/y/8-307019-8-puma-rosso-corsa-black-original-imagjh2ejz2grugn.jpeg?q=70",
@@ -17,7 +17,7 @@ export const products=[
 },
 {       id:uuidv4(),
         productName:"Sneakers",
-        price:974,
+        price:2004,
         rating:4,
         image:"https://rukminim1.flixcart.com/image/832/832/kvzkosw0/shoe/j/3/f/8-33613133651-8-pro-red-original-imag8rpv5qtgxsnv.jpeg?q=70",
         image1:"https://rukminim1.flixcart.com/image/832/832/kvzkosw0/shoe/o/l/4/8-33613133651-8-pro-red-original-imag8rpvfzehwu8s.jpeg?q=70",
@@ -31,7 +31,7 @@ export const products=[
 {
         id:uuidv4(),
         productName:"casual sneakers",
-        price:1500,
+        price:1550,
         rating:3,
         image:"https://rukminim1.flixcart.com/image/832/832/xif0q/shoe/h/n/4/-original-imagg3abdyzsvpcr.jpeg?q=70",
         image1:"https://rukminim1.flixcart.com/image/832/832/jziqhzk0/shoe/d/9/3/f-04cblue-skypy31cgryblk-6-asian-multicolor-original-imaekkzgwtynyheg.jpeg?q=70",

@@ -12,7 +12,7 @@ const initialState={
     sortByType:"",
     sortByColor:"",
     sortByTemplate:"",
-    sorByCost:""
+    sortByCost:""
 }
 
 const ProductProvider = ({ children }) => {

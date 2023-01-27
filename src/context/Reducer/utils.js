@@ -29,19 +29,19 @@ const sortProductByTemplate = (state, products) => {
       );
 };
 const sortProductByCost = (state, products) => {
-  let cost=state.sortByCost;
-  let costList=cost.split("-");
+  let costList=state.sortByCost;
   return costList.length === 0
-    ? products
-    : products.filter((item) =>
-        costList.some((price) => price <= item.price || price>=item.price )
+    ? products:
+    products.filter((item) =>
+        costList.some((productCost) => productCost.minValue <= item.price && productCost.maxValue >=item.price )
       );
 };
 
 const functionList = [
-    sortProductByColor,
-    sortProductByTemplate,
-   sortProductByType  
+   sortProductByColor,
+   sortProductByTemplate,
+   sortProductByType,
+   sortProductByCost
 ];
 
 export { composeFunction, functionList };

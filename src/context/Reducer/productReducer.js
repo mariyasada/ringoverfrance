@@ -1,5 +1,4 @@
 export const productReducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
 
     case "SET_TYPE":
@@ -27,7 +26,7 @@ export const productReducer = (state, action) => {
         )
       };
       case "SET_PRICE":
-      return { ...state, sortByCost:action.payload};
+      return { ...state, sortByCost:[...state.sortByCost,action.payload]};
 
     case "UNSET_PRICE":
       return {

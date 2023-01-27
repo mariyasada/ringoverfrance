@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 export const sidebarOption = [
   { path: "/home", name: "HOME" },
   { path: "/journey", name: "THE JOURNEY" },
@@ -100,4 +101,24 @@ export const customizedData=[{
   isRed:true,
   isBlack:false,
   isBlue:false
-}]
+}];
+
+ export const costFilterData=[
+  {id:uuidv4(),
+    labelName:"Rs.1500-4000",
+    minValue:1500,
+    maxValue:4000
+    },
+    {
+    id:uuidv4(),
+    labelName:"Rs.4001-7000",
+    minValue:4001,
+    maxValue:7000
+    },
+    {
+    id:uuidv4(),
+    labelName:"Rs.7001+",
+    minValue:7001,
+    maxValue:Infinity
+    }
+  ]

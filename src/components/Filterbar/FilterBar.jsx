@@ -1,6 +1,7 @@
 import React from "react";
 import { FiFilter } from "react-icons/fi";
 import { useProducts } from "../../context/Productcontext";
+import { costFilterData } from "../constants";
 import "../Filterbar/filterbar.css";
 
 export const FilterBar = () => {
@@ -20,11 +21,10 @@ export const FilterBar = () => {
     else return { type: "UNSET_TEMPLATE", payload: templateSize };
   };
 
-  const costClickHandler = (e) => {
+  const costClickHandler = (e, price) => {
     let checkedCost = e.target.checked;
-    let CostValue = e.target.value;
-    if (checkedCost) return { type: "SET_PRICE", payload: CostValue };
-    else return { type: "UNSET_PRICE", payload: CostValue };
+    if (checkedCost) return { type: "SET_PRICE", payload: price };
+    else return { type: "UNSET_PRICE", payload: price };
   };
 
   return (
@@ -36,18 +36,21 @@ export const FilterBar = () => {
       <div className="cost-data-container flex-center flex-column">
         <span className="cost-data f-bold">Cost</span>
 
-        {["1500-4000", "4001-7000", "7001"].map((price) => {
+        {costFilterData.map((price) => {
           return (
-            <li key={price}>
-              <label htmlFor={`${price}`}>
+            <li key={price.id}>
+              <label htmlFor={`${price.labelName}`}>
                 <input
                   type="checkbox"
-                  id={price}
-                  value={price}
-                  name={price}
-                  onChange={(e) => dispatch(costClickHandler(e))}
+                  id={price.labelName}
+                  value={price.labelName}
+                  name={price.labelName}
+                  // onChange={(e) =>
+                  //   dispatch({ type: "SET_PRICE", payload: price })
+                  // }
+                  onChange={(e) => dispatch(costClickHandler(e, price))}
                 />
-                RS. {price === "7001" ? `${price}+` : price}
+                {price.labelName}
               </label>
             </li>
           );
@@ -74,7 +77,7 @@ export const FilterBar = () => {
 
         {[2, 3, 3].map((size, index) => {
           return (
-            <li key={index === 2 ? size.toString() : size}>
+            <li key={index === 2 ? "3plus" : size}>
               <label htmlFor={`${size}`}>
                 <input
                   type="checkbox"
