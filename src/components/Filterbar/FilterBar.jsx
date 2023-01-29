@@ -5,7 +5,7 @@ import { costFilterData } from "../constants";
 import "../Filterbar/filterbar.css";
 
 export const FilterBar = () => {
-  const { dispatch } = useProducts();
+  const { dispatch, state } = useProducts();
 
   const ClickHandler = (e) => {
     let alreadyChecked = e.target.checked;
@@ -45,9 +45,7 @@ export const FilterBar = () => {
                   id={price.labelName}
                   value={price.labelName}
                   name={price.labelName}
-                  // onChange={(e) =>
-                  //   dispatch({ type: "SET_PRICE", payload: price })
-                  // }
+                  checked={state.sortByCost.includes(price)}
                   onChange={(e) => dispatch(costClickHandler(e, price))}
                 />
                 {price.labelName}
@@ -64,6 +62,7 @@ export const FilterBar = () => {
               <span
                 style={{ backgroundColor: color }}
                 key={color}
+                //checked={state.sortByColor.includes(color)}
                 onClick={() =>
                   dispatch({ type: "SORT_BY_COLOR", payload: color })
                 }
@@ -75,15 +74,16 @@ export const FilterBar = () => {
       <div className="design-container flex-center flex-column">
         <span className="design-data f-bold">Design Template</span>
 
-        {[2, 3, 3].map((size, index) => {
+        {[2, 3, 4].map((size, index) => {
           return (
-            <li key={index === 2 ? "3plus" : size}>
+            <li key={size}>
               <label htmlFor={`${size}`}>
                 <input
                   type="checkbox"
                   id={size}
                   value={index === 2 ? 4 : size}
                   name="design"
+                  checked={state.sortByTemplate.includes(size.toString())}
                   onChange={(e) => dispatch(templateClickHandler(e))}
                 />
                 {index === 2 ? `${size}+` : size}
@@ -104,6 +104,7 @@ export const FilterBar = () => {
                   value={type}
                   name={type}
                   onChange={(e) => dispatch(ClickHandler(e))}
+                  checked={state.sortByType.includes(type)}
                 />
                 {type}
               </label>

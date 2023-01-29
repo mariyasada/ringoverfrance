@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useProducts } from "../../context/Productcontext";
@@ -6,7 +7,19 @@ import "../ProductCard/productcard.css";
 
 export const ProductCard = ({ product }) => {
   const { productName, price, rating, image } = product;
-  const { dispatch } = useProducts();
+  const { dispatch, state } = useProducts();
+  const { cartList } = state;
+
+  const addToCart = (productToShow) => {
+    const newItem = cartList.find((item) => item.id === productToShow.id);
+    if (newItem) {
+      dispatch({ type: "INCREMENT", payload: productToShow });
+      toast("item quantity incremented", { icon: "✔" });
+    } else {
+      dispatch({ type: "ADD_TO_CART", payload: productToShow });
+    }
+  };
+
   return (
     <div className="card-container flex-center flex-column">
       <Link to={`/product/${product.id}`}>
@@ -16,7 +29,7 @@ export const ProductCard = ({ product }) => {
       </Link>
       <div
         className="card-details-container flex-center flex-column"
-        onClick={() => dispatch({ type: "ADD_TO_CART", payload: product })}
+        onClick={() => addToCart(product)}
       >
         <p className="product-name">{productName}</p>
         <div className="price-and-rating flex-center">

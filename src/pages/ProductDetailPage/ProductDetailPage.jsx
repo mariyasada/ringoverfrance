@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Cart } from "../../components";
 import { useProducts } from "../../context/Productcontext";
 import "../ProductDetailPage/productpage.css";
@@ -10,29 +10,44 @@ import {
   AiFillStar,
 } from "../../components/Icons";
 import { customizedData } from "../../components/constants";
+import { toast } from "react-hot-toast";
 
 export const ProductDetailPage = () => {
-  const { filteredData, dispatch } = useProducts();
+  const { filteredData, dispatch, state } = useProducts();
   const { productId } = useParams();
+  const navigate = useNavigate();
+  const { cartList } = state;
 
   const getProductDetails = (filteredData, productId) => {
     return filteredData.find((product) => product.id === productId);
   };
 
   let productToShow = getProductDetails(filteredData, productId);
-  console.log(productToShow);
   const [mainImg, setMainImg] = useState(productToShow?.image);
 
   useEffect(() => {
     setMainImg(productToShow?.image);
   }, [productToShow?.image]);
 
+  const addToCart = (productToShow) => {
+    const newItem = cartList.find((item) => item.id === productToShow.id);
+    if (newItem) {
+      dispatch({ type: "INCREMENT", payload: productToShow });
+      toast("item quantity incremented", { icon: "✔" });
+    } else {
+      dispatch({ type: "ADD_TO_CART", payload: productToShow });
+    }
+  };
+
   return (
     <div className="product-store-container flex-center">
       {/* single product details  */}
       <div className="Single-product-container flex-center flex-column">
         <span>
-          <IoIosArrowBack className="arrow-icon" />
+          <IoIosArrowBack
+            className="arrow-icon"
+            onClick={() => navigate("/")}
+          />
           your design space
         </span>
         <div className="main-image-container flex-center ">
@@ -84,7 +99,7 @@ export const ProductDetailPage = () => {
             <div className="front-data flex-center flex-column">
               {customizedData.map((item) => {
                 return (
-                  <div className="data-with-block flex-center">
+                  <div className="data-with-block flex-center" key={item}>
                     <span>{item.name}</span>
                     <div className="flex-center square gap-sm">
                       <span style={{ backgroundColor: "red" }}></span>
@@ -110,13 +125,7 @@ export const ProductDetailPage = () => {
         </div>
         <div className="buttons-container flex-center gap-sm ">
           <button>share design</button>
-          <button
-            onClick={() =>
-              dispatch({ type: "ADD_TO_CART", payload: productToShow })
-            }
-          >
-            add to cart
-          </button>
+          <button onClick={() => addToCart(productToShow)}>add to cart</button>
         </div>
       </div>
       {/* Cart data container */}

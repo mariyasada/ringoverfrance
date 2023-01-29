@@ -43,8 +43,8 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: white;
   width: 20vw;
-  height: 90vh;
-  max-height: auto;
+  min-height: 90vh;
+  height: auto;
   position: relative;
   padding: 4px;
 }
@@ -58,17 +58,15 @@ h2 {
   font-size: 1.2rem;
 }
 .data-container {
-  margin-top: 10px;
+  margin: 10px 0px;
+  min-height: 68vh;
   height: auto;
   gap: 4px;
 }
 .extra-details {
   height: 10vh;
-
   width: 18vw;
-  position: absolute;
-  bottom: 0;
-  margin: auto;
+  gap: 8px;
 }
 .gap-xsm {
   gap: 4px;
@@ -117,7 +115,6 @@ h2 {
   }
   .cart-data-container {
     width: 90vw;
-    min-height: 50vh;
     height: auto;
     position: relative;
     padding: 4px;
@@ -125,17 +122,22 @@ h2 {
 
   .data-container {
     display: grid;
-    grid-template-columns: repeat(1, 40rem);
+    grid-template-columns: repeat(2, 20rem);
+    grid-template-rows: auto;
     width: 90vw;
-    gap: 1rem;
+    gap: 11px;
     place-content: center;
     height: auto;
   }
+  .cart {
+    margin-left: auto;
+    width: 18vw;
+    margin: 0 auto;
+  }
   .extra-details {
-    height: 10vh;
+    height: 9vh;
     width: 90vw;
-    position: absolute;
-    margin: auto;
+    gap: 4px;
   }
   .error-msg {
     font-size: 12px;
@@ -183,10 +185,9 @@ h2 {
     height: auto;
   }
   .extra-details {
-    height: 10vh;
+    height: 9vh;
     width: 90vw;
-    position: absolute;
-    margin: auto;
+    gap: 4px;
   }
   .shoes-with-search {
     width: 80vw;

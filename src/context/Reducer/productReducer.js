@@ -39,14 +39,15 @@ export const productReducer = (state, action) => {
       case "ADD_TO_CART":
         return {...state,cartList:[...state.cartList,{...action.payload,qty:1}]};
 
-     
+     case "INCREMENT":
+      return {...state,cartList:state.cartList.map((item) =>item.id === action.payload.id ? { ...item, qty: item.qty + 1 } : item
+          )
+        }
 
         case "REMOVE_FROM_CART":
       return {
         ...state,
-        cartList: [
-          ...state.cartList.filter((item) => item.id !== action.payload)
-        ]
+        cartList: state.cartList.filter((item) => item.id !== action.payload.id)
       };
 
 

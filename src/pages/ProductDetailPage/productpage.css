@@ -15,6 +15,7 @@
 }
 .arrow-icon {
   margin-top: 4px;
+  cursor: pointer;
 }
 .main-image-container {
   width: 70vw;

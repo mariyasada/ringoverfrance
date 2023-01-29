@@ -2,7 +2,8 @@
   width: 17vw;
   position: relative;
   gap: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  height: auto;
 }
 .img-container > img {
   height: 6.5rem;
@@ -40,6 +41,7 @@
     position: relative;
     gap: 12px;
     margin: 0 auto;
+    height: auto;
   }
   .img-container > img {
     height: 5.5rem;
@@ -56,6 +58,7 @@
     width: 70vw;
     position: relative;
     gap: 10px;
+    height: auto;
   }
   .name-and-title > h4 {
     width: 50vw;

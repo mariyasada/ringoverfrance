@@ -20,9 +20,7 @@ export const CartCard = ({ product }) => {
       </div>
       <span
         className="cancel-button"
-        onClick={() =>
-          dispatch({ type: "REMOVE_FROM_CART", payload: product.id })
-        }
+        onClick={() => dispatch({ type: "REMOVE_FROM_CART", payload: product })}
       >
         <GiCancel />
       </span>
