@@ -49,7 +49,15 @@ export const productReducer = (state, action) => {
         ...state,
         cartList: state.cartList.filter((item) => item.id !== action.payload.id)
       };
-
+      
+      case "RESET_FILTERS":
+        return {
+          ...state, 
+        sortByType:"",
+        sortByColor:"",
+        sortByTemplate:"",
+        sortByCost:""
+      };
 
     default:
       return state;

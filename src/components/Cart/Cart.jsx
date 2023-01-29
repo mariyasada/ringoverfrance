@@ -19,7 +19,7 @@ export const Cart = () => {
       </div>
       <div className="data-container flex-center flex-column">
         {cartList.length === 0 ? (
-          <span>what's stopping you, designer?</span>
+          <span className="cart-msg">what's stopping you, designer?</span>
         ) : (
           cartList.map((item) => {
             return <CartCard product={item} key={item.id} />;

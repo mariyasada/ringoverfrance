@@ -11,7 +11,6 @@ import { useEffect } from 'react';
 function App() {
   const {filteredData}=useProducts();
   useEffect(()=>{
-
   },[filteredData])
   return (
     <div className="App">

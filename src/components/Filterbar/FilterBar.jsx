@@ -30,7 +30,12 @@ export const FilterBar = () => {
   return (
     <div className="filterbar-data flex-center flex-column gap-sm">
       <div className="filter-title flex-center">
-        <h4>Filters</h4>
+        <h4
+          onClick={() => dispatch({ type: "RESET_FILTERS" })}
+          style={{ cursor: "pointer" }}
+        >
+          Filters
+        </h4>
         <FiFilter className="icon" />
       </div>
       <div className="cost-data-container flex-center flex-column">
