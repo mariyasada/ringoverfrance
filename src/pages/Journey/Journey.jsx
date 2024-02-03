@@ -18,7 +18,11 @@ export const Journey = () => {
         <div className="details-container flex-center flex-column">
           {journeyDetails.map((data) => {
             return (
-              <div className="detail ">
+              <div
+                className="detail"
+                key={data.title}
+                data-testid="journey-cards"
+              >
                 <h4 className="journey-title">{data.title}</h4>
                 <p className="description">{data.description}</p>
               </div>
@@ -26,7 +30,7 @@ export const Journey = () => {
           })}
         </div>
       </div>
-      <div className="extra-div"></div>
+      {/* <div className="extra-div"></div> */}
     </div>
   );
 };

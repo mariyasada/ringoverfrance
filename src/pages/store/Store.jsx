@@ -22,10 +22,10 @@ export const Store = () => {
         </div>
 
         <div className="product-data-container">
-          {filteredData.length === 0 ? (
+          {filteredData?.length === 0 ? (
             <p className="error-msg">Oops !! Don't have any products</p>
           ) : (
-            filteredData.map((product) => {
+            filteredData?.map((product) => {
               return <ProductCard key={product.id} product={product} />;
             })
           )}

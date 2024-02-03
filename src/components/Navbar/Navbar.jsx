@@ -17,9 +17,17 @@ export const NavBar = () => {
         <div className="header-left-logo flex-center">
           <div className="menu-icon">
             {open ? (
-              <GiCancel className="menu-icon" onClick={() => setOpen(!open)} />
+              <GiCancel
+                className="menu-icon"
+                onClick={() => setOpen(!open)}
+                data-testid="humburger-cancel-icon"
+              />
             ) : (
-              <FiMenu className="menu-icon" onClick={() => setOpen(!open)} />
+              <FiMenu
+                className="menu-icon"
+                onClick={() => setOpen(!open)}
+                data-testid="humburger-icon"
+              />
             )}
           </div>
           <NavLink to="/">
@@ -32,7 +40,7 @@ export const NavBar = () => {
         </div>
 
         <div className="nav-items-container ">
-          <ul className="nav-items flex-center">
+          <ul className="nav-items flex-center" data-testid="nav-items">
             <NavLink to="/home" style={getActiveLink} className="nav-item">
               HOME
             </NavLink>

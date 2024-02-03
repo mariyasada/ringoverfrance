@@ -21,7 +21,10 @@ export const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="card-container flex-center flex-column">
+    <div
+      className="card-container flex-center flex-column"
+      data-testid="product-card"
+    >
       <Link to={`/product/${product.id}`}>
         <div className="product-image-container">
           <img src={image} alt={productName} />
@@ -30,6 +33,7 @@ export const ProductCard = ({ product }) => {
       <div
         className="card-details-container flex-center flex-column"
         onClick={() => addToCart(product)}
+        data-testid="addtocart-div"
       >
         <p className="product-name">{productName}</p>
         <div className="price-and-rating flex-center">

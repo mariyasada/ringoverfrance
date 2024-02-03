@@ -4,28 +4,28 @@ import { useProducts } from "../../context/Productcontext";
 import { costFilterData } from "../constants";
 import "../Filterbar/filterbar.css";
 
+export const ClickHandler = (e) => {
+  let alreadyChecked = e.target.checked;
+  let checkedName = e.target.value;
+  if (alreadyChecked) return { type: "SET_TYPE", payload: checkedName };
+  else return { type: "UNSET_TYPE", payload: checkedName };
+};
+
+export const templateClickHandler = (e) => {
+  let checkedTemplate = e.target.checked;
+  let templateSize = e.target.value;
+  if (checkedTemplate) return { type: "SET_TEMPLATE", payload: templateSize };
+  else return { type: "UNSET_TEMPLATE", payload: templateSize };
+};
+
+export const costClickHandler = (e, price) => {
+  let checkedCost = e.target.checked;
+  if (checkedCost) return { type: "SET_PRICE", payload: price };
+  else return { type: "UNSET_PRICE", payload: price };
+};
+
 export const FilterBar = () => {
   const { dispatch, state } = useProducts();
-
-  const ClickHandler = (e) => {
-    let alreadyChecked = e.target.checked;
-    let checkedName = e.target.value;
-    if (alreadyChecked) return { type: "SET_TYPE", payload: checkedName };
-    else return { type: "UNSET_TYPE", payload: checkedName };
-  };
-
-  const templateClickHandler = (e) => {
-    let checkedTemplate = e.target.checked;
-    let templateSize = e.target.value;
-    if (checkedTemplate) return { type: "SET_TEMPLATE", payload: templateSize };
-    else return { type: "UNSET_TEMPLATE", payload: templateSize };
-  };
-
-  const costClickHandler = (e, price) => {
-    let checkedCost = e.target.checked;
-    if (checkedCost) return { type: "SET_PRICE", payload: price };
-    else return { type: "UNSET_PRICE", payload: price };
-  };
 
   return (
     <div className="filterbar-data flex-center flex-column gap-sm">
@@ -33,6 +33,7 @@ export const FilterBar = () => {
         <h4
           onClick={() => dispatch({ type: "RESET_FILTERS" })}
           style={{ cursor: "pointer" }}
+          data-testid="clear-filters"
         >
           Filters
         </h4>
@@ -66,6 +67,7 @@ export const FilterBar = () => {
             return (
               <span
                 style={{ backgroundColor: color }}
+                data-testid={color}
                 key={color}
                 //checked={state.sortByColor.includes(color)}
                 onClick={() =>
@@ -104,6 +106,7 @@ export const FilterBar = () => {
             <li key={type}>
               <label htmlFor={`${type}`}>
                 <input
+                  data-testid={`shoes-${type}`}
                   type="checkbox"
                   id={type}
                   value={type}

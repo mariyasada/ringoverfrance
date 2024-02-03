@@ -45,6 +45,7 @@ export const ProductDetailPage = () => {
       <div className="Single-product-container flex-center flex-column">
         <span>
           <IoIosArrowBack
+            data-testid="backicon"
             className="arrow-icon"
             onClick={() => navigate("/")}
           />
@@ -52,7 +53,7 @@ export const ProductDetailPage = () => {
         </span>
         <div className="main-image-container flex-center ">
           <div className="image-with-rating flex-center flex-column">
-            <img src={`${mainImg}`} alt="" />
+            <img src={`${mainImg}`} data-testid="main-productimage" alt="" />
             <span className="rating flex-center">
               Rate product
               {[...new Array(5)].map((arr, index) => {
@@ -62,6 +63,7 @@ export const ProductDetailPage = () => {
           </div>
           <div className="three-image-container flex-center flex-column">
             <img
+              data-testid="image-1"
               src={`${productToShow?.image1}`}
               onClick={() => setMainImg(productToShow?.image1)}
               alt={productToShow?.productName}
@@ -70,11 +72,13 @@ export const ProductDetailPage = () => {
               src={productToShow?.image2}
               onClick={() => setMainImg(productToShow?.image2)}
               alt={productToShow?.productName}
+              data-testid="image-2"
             />
             <img
               src={productToShow?.image3}
               onClick={() => setMainImg(productToShow?.image3)}
               alt={productToShow?.productName}
+              data-testid="image-3"
             />
           </div>
           <div className="customizable-property-container flex-center flex-column">
@@ -123,7 +127,10 @@ export const ProductDetailPage = () => {
             </div>
           </div>
         </div>
-        <div className="buttons-container flex-center gap-sm ">
+        <div
+          className="buttons-container flex-center gap-sm"
+          data-testid="buttonDiv"
+        >
           <button>share design</button>
           <button onClick={() => addToCart(productToShow)}>add to cart</button>
         </div>

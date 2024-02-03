@@ -7,7 +7,7 @@ export const CartCard = ({ product }) => {
   const { image, productName, price, tagline } = product;
   const { dispatch } = useProducts();
   return (
-    <div className="cart-card-container flex-center">
+    <div className="cart-card-container flex-center" data-testid="cart-item">
       <div className="img-container">
         <img src={image} alt={productName} />
       </div>
@@ -20,6 +20,7 @@ export const CartCard = ({ product }) => {
       </div>
       <span
         className="cancel-button"
+        data-testid="deleteIcon"
         onClick={() => dispatch({ type: "REMOVE_FROM_CART", payload: product })}
       >
         <GiCancel />

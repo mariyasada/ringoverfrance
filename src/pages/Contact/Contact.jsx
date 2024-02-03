@@ -15,7 +15,7 @@ export const ContactPage = () => {
 
         {emailConstants.map((item) => {
           return (
-            <div className="emails-detail">
+            <div className="emails-detail" key={item.title}>
               <h4>{item.email}</h4>
               <span className="title">{item.title}</span>
             </div>

@@ -13,7 +13,10 @@ export const MemberCard = ({ member }) => {
     isFootball,
   } = member;
   return (
-    <div className="member-card-container flex-center flex-column">
+    <div
+      className="member-card-container flex-center flex-column"
+      data-testid="member-cards"
+    >
       <div className="image-container">
         <img src={`${profile}`} alt={name} />
       </div>

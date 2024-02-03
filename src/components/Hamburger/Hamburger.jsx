@@ -8,7 +8,7 @@ export const Hamburger = () => {
     color: isActive ? "red" : "",
   });
   return (
-    <div>
+    <div data-testid="hamburger-menu">
       <ul className="hamburger-menu-container">
         {sidebarOption.map((item) => {
           return (
