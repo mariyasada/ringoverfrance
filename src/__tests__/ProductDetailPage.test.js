@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { ProductProvider, initialState } from "../context/Productcontext";
+import { ProductProvider, dispatch } from "../context/Productcontext";
 import { ProductDetailPage, Store } from "../pages";
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
@@ -63,14 +63,20 @@ describe("test productdetails page", () => {
     expect(cartPlaceholderText).toBeInTheDocument();
     const addtocartbutton = screen.getByRole("button", { name: "add to cart" });
     fireEvent.click(addtocartbutton);
-    await waitFor(() => {
-      expect(cartPlaceholderText).not.toBeInTheDocument();
-    });
-    // NOTE:ASK SOMEONE ABOUT THIS
-    //clicking addtocart button for second time
-    // fireEvent.click(addtocartbutton);
+
     // await waitFor(() => {
-    //   expect(screen.getByTestId("toaster")).toBeInTheDocument();
+    expect(cartPlaceholderText).not.toBeInTheDocument();
+    // });
+    // mock context
+
+    // act(() => {
+    //   const { result } = renderHook(() =>
+    //     useReducer(productReducer, { ...initialState, cartList: [products[0]] })
+    //   );
+    //   const [state, dispatch] = result.current;
+    //   dispatch({ type: "INCREMENT", newState: products[0] });
+    //   expect;
+    //   state.toEqual({ ...initialState, cartList: [products[0]] });
     // });
   });
   test("clicking side product image should render on main image", async () => {

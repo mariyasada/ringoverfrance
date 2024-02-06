@@ -1,18 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter } from "react-router-dom";
-import { ProductProvider } from './context/Productcontext';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { ProductProvider } from "./context/Productcontext";
+import { TodoProvider } from "./context/Todocontext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <ProductProvider>
-    <App />
-    </ProductProvider>
+      <TodoProvider>
+        <ProductProvider>
+          <App />
+        </ProductProvider>
+      </TodoProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
