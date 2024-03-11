@@ -1,12 +1,20 @@
 import Todo from "../components/Todo";
-import { TodoProvider } from "../context/Todocontext";
-import { render, screen, waitFor } from "@testing-library/react";
+import { TodoProvider, TodoContext } from "../context/Todocontext";
+import { render, screen, waitFor, shallow } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { getUsers } from "../Users";
 import { Users as users } from "../Data/user";
 import axios from "axios";
+import { ProductProvider } from "../context/Productcontext";
+import React from "react";
 
 jest.mock("axios");
+
+jest.mock("../context/Todocontext", () => ({
+  ...jest.requireActual("../context/Todocontext"),
+  __esModule: true,
+  // default: React.createContext(),
+}));
 
 describe("testing axios again", () => {
   it("does context have all data or not", async () => {
@@ -16,10 +24,10 @@ describe("testing axios again", () => {
   });
 
   it("context testing", async () => {
-    const { getByText } = render(
-      <TodoProvider value={{ users }}>
+    render(
+      <TodoContext.Provider value={{ users }}>
         <Todo />
-      </TodoProvider>
+      </TodoContext.Provider>
     );
 
     console.log(screen.debug());

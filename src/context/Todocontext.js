@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { getUsers } from "../Users";
 
-const TodoContext = createContext();
+export const TodoContext = createContext();
 
 const TodoProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
